@@ -13,7 +13,6 @@ public class AmazonSearch {
     public static void main(String[] args) {
         WebDriverManager.chromedriver().setup();
 
-
         WebDriver driver = new ChromeDriver();
         driver.get("https://amazon.com");
 
@@ -21,6 +20,7 @@ public class AmazonSearch {
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys(searchterm+ Keys.ENTER);
 
         String actual = driver.findElement(By.id("twotabsearchtextbox")).getAttribute("value");
+        System.out.println(actual);
 
         if(searchterm.equals(actual)){
             System.out.println("PASS");
